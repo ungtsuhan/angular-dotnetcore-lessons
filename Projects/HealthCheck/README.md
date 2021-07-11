@@ -121,3 +121,12 @@ public void ConfigureServices(IServiceCollection services)
 Add constructor in ICMPHealthCheck to accept *host* and *healthRoundtripTime* parameters
 
 Construct message and pass to HealthCheckResult function
+
+Update middleware as below
+
+```cs
+ services.AddHealthChecks()
+    .AddCheck("ICMP_01", new ICMPHealthCheck("www.ryadel.com", 100))
+    .AddCheck("ICMP_02", new ICMPHealthCheck("www.google.com", 100))
+    .AddCheck("ICMP_03", new ICMPHealthCheck("www.does-not-exist.com", 100));
+```
