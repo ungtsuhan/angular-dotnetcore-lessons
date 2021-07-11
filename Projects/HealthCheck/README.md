@@ -115,3 +115,9 @@ public void ConfigureServices(IServiceCollection services)
         .AddCheck<ICMPHealthCheck>("ICMP");
 }
 ```
+
+### Add paramters and response messages
+
+Add constructor in ICMPHealthCheck to accept *host* and *healthRoundtripTime* parameters
+
+Construct message and pass to HealthCheckResult function
