@@ -193,24 +193,24 @@ Example response as below:
 ```json
 {
     "checks": [
-    {
-        "name": "ICMP_01",
-        "responseTime": 137.1552,
-        "status": "Healthy",
-        "description": "ICMP to www.ryadel.com took 12 ms"
-    },
-    {
-        "name": "ICMP_02",
-        "responseTime": 174.807,
-        "status": "Healthy",
-        "description": "ICMP to www.google.com took 12 ms"
-    },
-    {
-        "name": "ICMP_03",
-        "responseTime": 5161.7416,
-        "status": "Unhealthy",
-        "description": "ICMP to www.does-not-exist.com failed: TimedOut"
-    }
+        {
+            "name": "ICMP_01",
+            "responseTime": 137.1552,
+            "status": "Healthy",
+            "description": "ICMP to www.ryadel.com took 12 ms"
+        },
+        {
+            "name": "ICMP_02",
+            "responseTime": 174.807,
+            "status": "Healthy",
+            "description": "ICMP to www.google.com took 12 ms"
+        },
+        {
+            "name": "ICMP_03",
+            "responseTime": 5161.7416,
+            "status": "Unhealthy",
+            "description": "ICMP to www.does-not-exist.com failed: TimedOut"
+        }
     ],
     "totalStatus": 0,
     "totalResponseTime": 5184.3754
