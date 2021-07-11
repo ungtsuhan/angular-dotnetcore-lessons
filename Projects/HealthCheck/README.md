@@ -1,5 +1,7 @@
 # Health Check
 
+Application with feature that reports the health of app infrastructure
+
 ## Chapter 2 Looking Around
 
 ### Creating .NET and Angular Project
