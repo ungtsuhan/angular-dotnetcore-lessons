@@ -54,3 +54,60 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 Press *F5* and browse route `/hc`
+
+### Adding an ICMP check
+
+Create an ICMPHealthCheck class
+
+```cs
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System;
+using System.Net.NetworkInformation;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace HealthCheck
+{
+    public class ICMPHealthCheck : IHealthCheck
+    {
+        private readonly string Host = "www.does-not-exist.com";
+        private readonly int HealthyRoundtripTime = 300;
+
+        public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                using var ping = new Ping();
+                var reply = await ping.SendPingAsync(Host);
+
+                switch (reply.Status)
+                {
+                    case IPStatus.Success:
+                        return (reply.RoundtripTime > HealthyRoundtripTime) ? HealthCheckResult.Degraded(): HealthCheckResult.Healthy();
+
+                    default:
+                        return HealthCheckResult.Unhealthy();
+                }
+
+            }
+            catch (Exception e)
+            {
+                return HealthCheckResult.Unhealthy();
+            }
+        }
+    }
+}
+
+```
+
+### Adding the ICMPHealthCheck to the pipeline
+
+Add `AddCheck` to the AddHealthChecks pipeline
+
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddHealthChecks()
+        .AddCheck<ICMPHealthCheck>("ICMP");
+}
+```
