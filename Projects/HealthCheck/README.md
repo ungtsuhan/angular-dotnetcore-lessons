@@ -44,7 +44,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Add following lines to the **Configure** Method
+- Add following lines to the **Configure** Method
 
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -133,7 +133,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Implementing a custom output message
 
-Create CustomHealthCheckOptions.cs
+- Create CustomHealthCheckOptions.cs
 
 ```cs
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
