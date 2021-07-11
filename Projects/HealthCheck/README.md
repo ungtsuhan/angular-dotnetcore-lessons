@@ -22,7 +22,7 @@ Run and browse route `/test.html`
 
 ### Delete unwanted components in Angular
 
-Delete counter and fetch data components
+Delete *counter* and *fetch data* components
 
 ### Create Sepeate App Routing Module
 
