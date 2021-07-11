@@ -278,3 +278,33 @@ Add li to the tab list
     <a class="nav-link text-dark" [routerLink]="['/health-check']">Health Check</a>
 </li>
 ```
+
+### Populate result to table in html
+
+Add code below to health-check.component.html
+
+```html
+<h1>Health Check</h1>
+
+<p>Here are the results of our health check:</p>
+
+<p *ngIf="!result"><em>Loading...</em></p>
+
+<table *ngIf="result">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Response Time</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>  
+  </thead>
+  <tr *ngFor="let check of result.checks">
+    <td>{{ check.name }}</td>
+    <td>{{ check.responseTime }}</td>
+    <td>{{ check.status }} </td>
+    <td>{{ check.description }}</td>  
+  </tr>
+</table>
+
+```
