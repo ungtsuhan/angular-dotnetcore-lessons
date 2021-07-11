@@ -219,5 +219,5 @@ Example response as below:
 
 ### Create health-check component
 
-Run `ng g c health-check `
+Run `ng g c health-check`
 
