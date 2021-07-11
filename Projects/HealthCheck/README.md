@@ -15,3 +15,8 @@ hitting the **Run** button or the *F5* key
 Create `test.html` in `wwwroot`
 
 Run and browse route `/test.html`
+
+## Delete unwanted components in Angular
+
+Delete counter and fetch data components
+
