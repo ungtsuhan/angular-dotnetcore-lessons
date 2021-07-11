@@ -273,7 +273,7 @@ interface Check {
 
 - Add li to the tab list
 
-```
+```html
 <li class="nav-item" [routerLinkActive]="['link-active']">
     <a class="nav-link text-dark" [routerLink]="['/health-check']">Health Check</a>
 </li>
