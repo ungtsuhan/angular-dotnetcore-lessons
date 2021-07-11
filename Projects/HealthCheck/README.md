@@ -216,3 +216,8 @@ Example response as below:
     "totalResponseTime": 5184.3754
 }
 ```
+
+### Create health-check component
+
+Run `ng g c health-check `
+
