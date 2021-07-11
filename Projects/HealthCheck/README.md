@@ -73,7 +73,9 @@ namespace HealthCheck
         private readonly string Host = "www.does-not-exist.com";
         private readonly int HealthyRoundtripTime = 300;
 
-        public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
+        public async Task<HealthCheckResult> CheckHealthAsync(
+            HealthCheckContext context, 
+            CancellationToken cancellationToken = default)
         {
             try
             {
@@ -83,7 +85,9 @@ namespace HealthCheck
                 switch (reply.Status)
                 {
                     case IPStatus.Success:
-                        return (reply.RoundtripTime > HealthyRoundtripTime) ? HealthCheckResult.Degraded(): HealthCheckResult.Healthy();
+                        return (reply.RoundtripTime > HealthyRoundtripTime) ? 
+                            HealthCheckResult.Degraded(): 
+                            HealthCheckResult.Healthy();
 
                     default:
                         return HealthCheckResult.Unhealthy();
