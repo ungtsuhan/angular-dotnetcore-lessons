@@ -26,6 +26,8 @@ namespace HealthCheck
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +55,7 @@ namespace HealthCheck
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHealthChecks("/hc");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");

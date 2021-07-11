@@ -2,6 +2,7 @@
 
 Application with feature that reports the health of app infrastructure
 
+
 ## Chapter 2 Looking Around
 
 ### Creating .NET and Angular Project
@@ -29,3 +30,27 @@ Delete *counter* and *fetch data* components
 Create `app-routing.module.ts` in `src\app`
 
 Import `app-routing.module.ts` in `app.module.ts`
+
+
+## Chapter 3 Front-End and Back-End Interactions
+
+### Adding HealthChecks middleware
+
+Add following lines to the **ConfigureServices** method in `Startup.cs`
+
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddHealthChecks();
+}
+```
+
+Add following lines to the **Configure** Method
+
+```cs
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+	endpoints.MapHealthChecks("/hc");
+}
+```
+Press *F5* and browse route `/hc`
