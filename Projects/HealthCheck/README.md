@@ -35,7 +35,7 @@ Application that reports the health of app infrastructure
 
 ### Adding HealthChecks middleware
 
-Add following lines to the **ConfigureServices** method in `Startup.cs`
+- Add following lines to the **ConfigureServices** method in `Startup.cs`
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -52,11 +52,12 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 	endpoints.MapHealthChecks("/hc");
 }
 ```
-Press *F5* and browse route `/hc`
+
+- Press *F5* and browse route `/hc`
 
 ### Adding an ICMP check
 
-Create an ICMPHealthCheck class
+- Create an ICMPHealthCheck class
 
 ```cs
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -105,7 +106,7 @@ namespace HealthCheck
 
 ### Adding the ICMPHealthCheck to the pipeline
 
-Add `AddCheck` to the AddHealthChecks pipeline
+- Add `AddCheck` to the AddHealthChecks pipeline
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -117,11 +118,11 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Add paramters and response messages
 
-Add constructor in ICMPHealthCheck to accept *host* and *healthRoundtripTime* parameters
+- Add constructor in ICMPHealthCheck to accept *host* and *healthRoundtripTime* parameters
 
-Construct message and pass to HealthCheckResult function
+- Construct message and pass to HealthCheckResult function
 
-Update middleware as below
+- Update middleware as below
 
 ```cs
  services.AddHealthChecks()
@@ -178,7 +179,7 @@ namespace HealthCheck
 }
 ```
 
-Configure the output message by changing the following lines in *Configure* Method
+- Configure the output message by changing the following lines in *Configure* Method
 
 ```cs
 app.UseEndpoints(endpoints =>
@@ -187,7 +188,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-Example response as below:
+- Example response as below:
 
 ```json
 {
@@ -218,9 +219,9 @@ Example response as below:
 
 ### Create health-check component
 
-Run `ng g c health-check`
+- Run `ng g c health-check`
 
-typescript code as below:
+- ts code as below:
 
 ```ts
 import { Component, Inject, OnInit } from '@angular/core';
@@ -262,7 +263,7 @@ interface Check {
 
 ### Add routing for health check component
 
-Add below path in app-routing module
+- Add below path in app-routing module
 
 ```
 { path: 'health-check', component: HealthCheckComponent }
@@ -270,7 +271,7 @@ Add below path in app-routing module
 
 ### Add Tab to Navbar
 
-Add li to the tab list
+- Add li to the tab list
 
 ```
 <li class="nav-item" [routerLinkActive]="['link-active']">
@@ -280,7 +281,7 @@ Add li to the tab list
 
 ### Populate result to table in html
 
-Add code below to health-check.component.html
+- Add code below to health-check.component.html
 
 ```html
 <h1>Health Check</h1>
@@ -305,5 +306,6 @@ Add code below to health-check.component.html
     <td>{{ check.description }}</td>  
   </tr>
 </table>
-
 ```
+
+- Apply css to table
