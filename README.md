@@ -6,18 +6,18 @@ Code files for this book can be found here [https://github.com/PacktPublishing/A
 
 ## Contents
 
-- [x] (Chapter 1: Getting Ready)
-- [x] (Chapter 2: Looking Around)
-- [x] (Chapter 3: Front-End and Back-End Interaction)
-- [x] (Chapter 4: Data Model with Entity Framework Core)
-- [ ] (Chapter 5: Fetching and Displaying Data)
-- [ ] (Chapter 6: Forms and Data Validation)
-- [ ] (Chapter 7: Code Tweaks and Data Services)
-- [ ] (Chapter 8: Back-End and Front-End Debugging)
-- [ ] (Chpater 9: ASP.NET Core and Angular Unit Testing)
-- [ ] (Chpater 10: Authentication and Authorization)
-- [ ] (Chapter 11: Progressive Web Apps)
-- [ ] (Chapter 12: Windows, Linux, and Azure Development) 
+- [x] Chapter 1: Getting Ready
+- [x] Chapter 2: Looking Around
+- [x] Chapter 3: Front-End and Back-End Interaction
+- [x] Chapter 4: Data Model with Entity Framework Core
+- [ ] Chapter 5: Fetching and Displaying Data
+- [ ] Chapter 6: Forms and Data Validation
+- [ ] Chapter 7: Code Tweaks and Data Services
+- [ ] Chapter 8: Back-End and Front-End Debugging
+- [ ] Chpater 9: ASP.NET Core and Angular Unit Testing
+- [ ] Chpater 10: Authentication and Authorization
+- [ ] Chapter 11: Progressive Web Apps
+- [ ] Chapter 12: Windows, Linux, and Azure Development
 
 ## Projects
 
