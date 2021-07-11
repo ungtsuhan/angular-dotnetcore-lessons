@@ -221,3 +221,60 @@ Example response as below:
 
 Run `ng g c health-check`
 
+typescript code as below:
+
+```ts
+import { Component, Inject, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-health-check',
+  templateUrl: './health-check.component.html',
+  styleUrls: ['./health-check.component.css']
+})
+export class HealthCheckComponent implements OnInit {
+
+  public result: Result;
+
+  constructor(private http: HttpClient,
+    @Inject('BASE_URL') private baseUrl: string) { }
+
+  ngOnInit(): void {
+    this.http.get<Result>(this.baseUrl + 'hc').subscribe(result => {
+      this.result = result;
+    }, error => console.error(error))
+  }
+
+}
+
+interface Result {
+  checks: Check[],
+  totalStatus: string,
+  totalResponseTime: string
+}
+
+interface Check {
+  name: string,
+  status: string,
+  responseTime: number
+}
+
+```
+
+### Add routing for health check component
+
+Add below path in app-routing module
+
+```
+{ path: 'health-check', component: HealthCheckComponent }
+```
+
+### Add Tab to Navbar
+
+Add li to the tab list
+
+```
+<li class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-dark" [routerLink]="['/health-check']">Health Check</a>
+</li>
+```
