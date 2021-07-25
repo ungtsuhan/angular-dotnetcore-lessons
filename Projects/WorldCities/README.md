@@ -31,3 +31,15 @@
 - Download [World Cities image](https://www.pexels.com/photo/close-up-of-globe-335393) and place it in `wwwroot/img` folder.
 
 - Edit home component to include image
+
+### Download World Cities data
+
+- download excel from this [source](https://simplemaps.com/data/world-cities)
+
+### Install Entity Framework Core
+
+- Install `Microsoft.EntityFrameworkCore`
+
+- Install `Microsoft.EntityFrameworkCore.Tools`
+
+- Install `Microsoft.EntityFrameworkCore.SqlServer`
