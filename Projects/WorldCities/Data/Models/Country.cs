@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WorldCities.Data.Models
 {
+    [Table("Countries")]
     public class Country
     {
         #region Constructor

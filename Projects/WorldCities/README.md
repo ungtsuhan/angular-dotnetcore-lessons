@@ -163,3 +163,19 @@ public virtual Country Country { get; set; }
 public virtual List<City> Cities { get; set; }
 #endregion
 ```
+
+### Define database table names
+
+- For the City Entity
+
+```cs
+[Table("Cities")]
+public class City
+```
+
+- For the Country Entity
+
+```cs
+[Table("Countries")]
+public class Country
+```
