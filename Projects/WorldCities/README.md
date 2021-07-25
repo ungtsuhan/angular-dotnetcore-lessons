@@ -25,3 +25,9 @@
 - Create `app-routing.module.ts` in `src\app`
 
 - Import `app-routing.module.ts` in `app.module.ts`
+
+### Display image in home component
+
+- Download [World Cities image](https://www.pexels.com/photo/close-up-of-globe-335393) and place it in `wwwroot/img` folder.
+
+- Edit home component to include image
