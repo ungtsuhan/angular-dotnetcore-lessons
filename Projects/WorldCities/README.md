@@ -19,3 +19,9 @@
 - /ClientApp/src/app/counter/ (delete - whole folder)
 
 - /ClientApp/src/app/fetch-data/ (delete - whole folder)
+
+### Create Sepeate App Routing Module
+
+- Create `app-routing.module.ts` in `src\app`
+
+- Import `app-routing.module.ts` in `app.module.ts`
