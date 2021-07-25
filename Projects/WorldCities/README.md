@@ -244,7 +244,7 @@ namespace WorldCities.Data
 
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Securit=False;MultipleActiveResltSets=True"
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Security=False;MultipleActiveResultSets=True"
   }
 ```
 
@@ -256,7 +256,7 @@ namespace WorldCities.Data
 
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Securit=False;MultipleActiveResltSets=True"
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Security=False;MultipleActiveResultSets=True"
 }
 ```
 
@@ -274,3 +274,24 @@ services.AddDbContext<ApplicationDbContext>(options =>
     )
 );
 ```
+
+### Add Initial Migration
+
+- Run `dotnet ef migrations add "Initial" -o "Data/Migrations"`
+
+- Error message is showed ` No type was specified for the decimal property 'Lat' on entity type 'City'`
+
+- Add type for decimal in City.cs
+
+```cs
+[Column(TypeName="decimal(7,4)")]
+public decimal Lat { get; set; }
+
+[Column(TypeName = "decimal(7,4)")]
+public decimal Lon { get; set; }
+```
+- Run `dotnet ef migrations add "Initial" -o "Data/Migrations"` again
+
+### Updating the database
+
+- Run `dotnet ef database update`
