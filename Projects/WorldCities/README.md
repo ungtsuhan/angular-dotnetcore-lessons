@@ -179,3 +179,33 @@ public class City
 [Table("Countries")]
 public class Country
 ```
+
+### Create SQL Database Instance
+
+- Create a database `WorldCities`
+
+### Add Login
+
+- Expand Security
+
+- Right click login and choose new login
+
+- Choose SQL Server Authentication
+
+- Username: WorldCities
+
+- Password: WorldCities
+
+- Disable Enforce password policy
+
+- Select default database is `WorldCities`
+
+### Map Login to the database
+
+- Click the WorldCities Login
+
+- Click User Mapping
+
+- Click Checkbox of WorldCities
+
+- In role membership, assign db_owner
