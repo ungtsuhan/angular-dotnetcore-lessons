@@ -209,3 +209,33 @@ public class Country
 - Click Checkbox of WorldCities
 
 - In role membership, assign db_owner
+
+### Settip up DBContext
+
+- create `ApplicationDbContext.cs` and add below code
+
+```cs
+using Microsoft.EntityFrameworkCore;
+using WorldCities.Data.Models;
+
+namespace WorldCities.Data
+{
+    public class ApplicationDbContext: DbContext
+    {
+        public ApplicationDbContext(): base()
+        {
+
+        }
+
+        public ApplicationDbContext(DbContextOptions options): base(options)
+        {
+
+        }
+
+        public DbSet<City> Cities { get; set; }
+
+        public DbSet<Country> Countries { get; set; }
+    }
+}
+
+```
