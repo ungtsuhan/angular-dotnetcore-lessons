@@ -239,3 +239,25 @@ namespace WorldCities.Data
 }
 
 ```
+
+### Update Connection string in appsettings.json
+
+```json
+"ConnectionStrings": {
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Securit=False;MultipleActiveResltSets=True"
+  }
+```
+
+### Store connection string in user secret
+
+- right click solution and click manage user secret
+
+- cut connection string from `appsettings.json` to `secrets.json` 
+
+```json
+"ConnectionStrings": {
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=WorldCities;User Id=WorldCities;Password=WorldCities;Integrated Securit=False;MultipleActiveResltSets=True"
+}
+```
+
+- secrets.json is stored in `\Users\UserName\AppData\Roaming]Microsoft\UserSecrets\`
