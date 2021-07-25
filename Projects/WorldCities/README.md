@@ -8,3 +8,9 @@
 
 - Run `dotnet new angular -o WorldCities`
 
+### Edit or delete the following .NET backend files
+
+- WeatherForecast.cs (delete)
+
+- /Controllers/WeatherForecastController.cs (delete)
+
