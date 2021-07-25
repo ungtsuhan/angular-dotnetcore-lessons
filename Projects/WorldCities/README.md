@@ -261,3 +261,16 @@ namespace WorldCities.Data
 ```
 
 - secrets.json is stored in `\Users\UserName\AppData\Roaming]Microsoft\UserSecrets\`
+
+### Update Startup.cs
+
+- add ApplicationDbContext in `ConfigureServices` function in `Startup.cs`
+
+```cs
+// Add ApplicationDbContext and SQL Server support
+services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(
+        Configuration.GetConnectionString("DefaultConnection")
+    )
+);
+```
