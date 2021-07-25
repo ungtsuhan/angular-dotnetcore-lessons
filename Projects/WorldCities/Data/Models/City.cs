@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WorldCities.Data.Models
 {
@@ -43,6 +44,14 @@ namespace WorldCities.Data.Models
         /// <summary>
         /// Country Id (foreign key)
         /// </summary>
+        [ForeignKey(nameof(Country))]
         public int CountryId { get; set; }
+
+        #region Navigation Properties
+        /// <summary>
+        /// The country related to this city
+        /// </summary>
+        public virtual Country Country { get; set; }
+        #endregion
     }
 }

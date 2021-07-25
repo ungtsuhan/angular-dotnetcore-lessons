@@ -139,3 +139,27 @@ namespace WorldCities.Data.Models
     }
 }
 ```
+
+### Define Relationship
+
+- Add below code in City
+
+```cs
+[ForeignKey(nameof(Country))]
+public int CountryId { get; set; }
+
+#region Navigation Properties
+/// <summary>
+/// The country related to this city
+/// </summary>
+public virtual Country Country { get; set; }
+#endregion
+```
+
+- Add below code in Country
+
+```cs
+#region Navigation Properties
+public virtual List<City> Cities { get; set; }
+#endregion
+```

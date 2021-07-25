@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WorldCities.Data.Models
 {
@@ -33,6 +34,10 @@ namespace WorldCities.Data.Models
         /// Country code (in ISO 3166-1 ALPHA-3 format)
         /// </summary>
         public string ISO3 { get; set; }
+        #endregion
+        
+        #region Navigation Properties
+        public virtual List<City> Cities { get; set; }
         #endregion
     }
 }
