@@ -704,3 +704,22 @@ namespace WorldCities.Controllers
     }
 }
 ```
+
+## Chapter 5 Fetching and Display Data
+
+### Modify JSON response convention
+
+- Purpose: to make json response more readable
+
+- Add following code to `services.AddControllersWithViews()` function
+
+```cs
+services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        // set this option to TRUE to indent the JSON output
+        options.JsonSerializerOptions.WriteIndented = true;
+        //set this option to NULL to use PascalCase instead of camelCase (default)
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
+```
